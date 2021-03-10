@@ -1,0 +1,41 @@
+/* component/tabbar/tabbar.wxss */
+.tab-bar{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 80rpx;
+  background-color: white;
+  padding-bottom: constant(safe-area-inset-bottom);
+  padding-bottom: env(safe-area-inset-bottom);
+  display: flex;
+}
+
+.tab-bar .tab-bar-border{
+  background-color: rgba(0, 0, 0, 0.33);
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 1rpx;
+  transform: scaleY(0.5);
+}
+
+.tab-bar .tab-bar-item{
+  flex:1;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.tab-bar-item .item-image{
+  width: 42rpx;
+  height: 42rpx;
+}
+
+.tab-bar-item .item-text{
+  font-size: 18rpx;
+}
+

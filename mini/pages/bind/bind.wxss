@@ -1,0 +1,5 @@
+/* pages/bind/bind.wxss */
+.getUsrinfo image{
+  height: 100rpx;
+  width: 100rpx;
+}

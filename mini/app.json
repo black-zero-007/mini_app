@@ -1,0 +1,50 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/publish/publish",
+    "pages/redirect/redirect",
+    "pages/bind/bind",
+    "pages/login/login",
+    "pages/home/home",
+    "pages/topic/topic",
+    "pages/pub/pub",
+    "pages/auction/auction",
+    "pages/newsDetail/newsDetail",
+    "pages/hotNews/hotNews",
+    "pages/goodNews/goodNews",
+    "pages/topicdetail/topicdetail",
+    "pages/my_article/my_article",
+    "pages/followDetail/follow_detail",
+    "pages/homepage/homepage",
+    "pages/collect_news/collect_news"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#FFDEAD",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "my_app"
+  },
+  "tabBar": {
+    "custom": true,
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "static/tabbar/ic_menu_choice_nor.png",
+        "selectedIconPath": "static/tabbar/ic_menu_choice_pressed.png"
+      },
+      {
+        "pagePath": "pages/auction/auction",
+        "text": "拍卖",
+        "iconPath": "static/tabbar/ic_menu_shopping_nor.png",
+        "selectedIconPath": "static/tabbar/ic_menu_shopping_pressed.png"
+      },
+      {
+        "pagePath": "pages/home/home",
+        "text": "我的",
+        "iconPath": "static/tabbar/ic_menu_me_nor.png",
+        "selectedIconPath": "static/tabbar/ic_menu_me_pressed.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

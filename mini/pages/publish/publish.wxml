@@ -1,0 +1,46 @@
+<!--pages/login/login.wxml-->
+<view class="container">
+  <view class="chose-image" bindtap="AddImage">
+    <image src="/static/images/icon/picupload_icon_show.png"></image>
+    <text>添加图片</text>
+  </view>
+  <view class="image-list" wx:if="{{imageList.length > 0}}">
+    <view class="item" wx:for="{{imageList}}" wx:key = key>
+      <image src="{{item.path}}"></image>
+      <icon wx:if="{{item.percent==100}}" class="rm" type="clear" color="red" size="15" bindtap="removeImage" data-index="{{index}}" data-item="{{item}}"></icon>
+      <progress percent="{{item.percent}}" wx:if="{{item.error}}" activecolor="#FF0000" />
+      <progress percent="{{item.percent}}" wx:else />
+      <!-- <progress percent="20" /> -->
+    </view> 
+  </view>
+  <view class="text">
+    <textarea placeholder="来呀，写下你的动态" value="{{content}}" bindinput="bindContentInput"></textarea>
+  </view>
+
+  <view class="function-view">
+    <view class="row" bindtap="getLocation">
+       <view class="left" wx:if="{{address}}">{{address}}</view>
+       <view class="left" wx:else>请选择位置</view>
+       <view class="right">
+         <image class="go-icon" src="/static/images/icon/to_icon_show_small.png"></image>
+       </view> 
+    </view>
+    <navigator url="/pages/topic/topic" class="row">
+      <view class="left" >{{topicTitle}}</view>
+      <view class="right">
+        <image class="go-icon" src="/static/images/icon/to_icon_show_small.png"></image>
+      </view>
+    </navigator>
+  </view>
+</view>
+<view class="publish-btn" bindtap="publishNews">发布</view>
+
+<tabbar selected="{{2}}"></tabbar>
+
+<!-- <view bindtap="Addimage">添加图片</view>
+<view class="container">
+  <image wx:for="{{Listadd}}" src="{{item}}"></image>
+</view>
+<view bindtap="uploadFile">点击上传</view> -->
+
+

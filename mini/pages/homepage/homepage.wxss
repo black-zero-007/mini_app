@@ -1,0 +1,43 @@
+/* pages/homepage/homepage.wxss */
+.container{
+  height: 100%;
+}
+.container .top{
+  width: 100%;
+  height: 160rpx;
+  border-bottom-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+  background-color: #01ccb6;
+}
+
+.container image{
+  border-radius: 75rpx;
+  width:150rpx;
+  height: 150rpx;
+  position: fixed;
+  top: 80rpx;
+  left: 300rpx;
+}
+
+.container .userInfo{
+  margin-top: 100rpx;
+}
+
+.container .Style{
+  margin: 0 30rpx;
+  padding: 30rpx 0 20rpx 10rpx;
+  border-bottom: 1rpx solid #00C5CD;
+}
+
+.container .Style .text{
+  font-size: small;
+  margin-bottom: 15rpx;
+}
+
+.container button{
+  margin-top: 100rpx;
+  width: 150rpx;
+  background-color: #53868B;
+  color: white;
+  font-weight: 600;
+}

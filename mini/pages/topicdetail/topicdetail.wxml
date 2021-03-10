@@ -1,0 +1,42 @@
+<!--pages/topicdetail/topicdetail.wxml-->
+<view class="img">
+  <view class="cover">
+    <view wx:for="{{cover}}" wx:key='index'>
+      <image src="{{item}}"></image>
+    </view>
+    <view class="topic_text">
+      <view class="item">
+        <view class="row">
+          <text>{{TopicList.title}}</text>
+        </view>
+        <view class="text">
+          <text>{{TopicList.topic.count}}文章</text>
+          <text>{{TopicList.count}}次浏览</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="container" wx:if="{{imageList[0].id}}">
+  <view class="item" wx:for="{{imageList}}" wx:key='index' >
+    <view class="fixed" >
+      <navigator url="/pages/newsDetail/newsDetail?newsId={{item.id}}">
+        <image src="{{item.cover}}" mode="widthFix"></image>
+      </navigator>
+      <view class="bottom_sty">
+        <view class="item_user">用户名：{{item.user.nickname}}</view>
+        <view class="item_img">
+          <image  src="/static/images/icon/眼睛 (1).png" ></image>
+          <view class="item_viewer">{{item.viewer_count}}</view>
+        </view>    
+      </view>   
+    </view>   
+    <view class="item_content">
+      <view>{{item.content}}</view> 
+    </view>     
+  </view>
+</view>
+<view wx:else="{{imageList}}">
+  <text>暂无内容</text>
+</view>

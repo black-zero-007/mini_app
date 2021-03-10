@@ -1,0 +1,85 @@
+/* pages/login/login.wxss */
+.container{
+  padding: 40rpx;
+  padding-bottom: 140rpx;
+}
+
+.container .chose-image{
+  width: 150rpx;
+  padding: 10rpx 0;
+  border-bottom: 1rpx solid #ddd;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 28rpx;
+  color: #8c8c8c;
+}
+
+.container image{
+  width: 60rpx;
+  height: 60rpx;
+}
+
+.container .text{
+  margin: 30rpx 0;
+}
+
+.image-list{
+  margin-top: 20rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  flex-wrap: wrap;
+}
+
+.image-list .item{
+  position: relative;
+  padding: 15rpx;
+}
+
+.image-list .item image{
+  width: 150rpx;
+  height: 150rpx;
+}
+
+.image-list .item .rm{
+  position: absolute;
+  right: -10rpx;
+  top: -10rpx;
+  
+}
+
+.container .function-view{
+  font-size: 28rpx;
+}
+
+.function-view .row{
+  padding: 30rpx 0;
+  border-bottom: 1rpx solid #efefef;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.function-view .row .right{
+  color: #8c8c8c;
+}
+
+.function-view .row .go-icon{
+  margin: 0 20rpx;
+  width: 24rpx;
+  height: 24rpx;
+}
+
+.publish-btn{
+  position: fixed;
+  background-color: #4ccb56;
+  color: #fff;
+  width: 100%;
+  bottom: 0;
+  height: 100rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

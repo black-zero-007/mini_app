@@ -1,0 +1,15 @@
+<!--pages/topic/topic.wxml-->
+<view class="container">
+  <view class="item" wx:for="{{TopicList}}" bindtap="choseTopic" data-xx="{{item}}" wx:key='index'>
+    <view class="row">
+      <text>{{item.title}}</text>
+      <navigator url="/pages/topicdetail/topicdetail?topic_id={{item.id}}">
+        <image src="/static/images/icon/to_icon_show_small.png"></image>
+      </navigator>     
+    </view>
+    <view class="text">
+      <text>{{item.topic.count}}文章</text>
+      <text>{{item.count}}次浏览</text>
+    </view>
+  </view>
+</view>

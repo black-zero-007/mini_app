@@ -1,0 +1,45 @@
+<!--pages/followDetail/follow_detail.wxml-->
+<view class="Follow_container" wx:if="{{choose=='true'}}">
+  <view class="container" wx:if="{{Follow_exists}}" >
+    <view class="item" wx:for="{{FollowList}}" wx:key='index'>
+      <view class="row">
+        <view class="userinfo">
+          <image class="avatar" src="{{item.avatar}}"></image>  
+          <view class="user">
+            <view class="nickname">{{item.nickname}}</view>
+            <view class="fans">粉丝 · {{item.follow_count}}</view>
+          </view>
+        </view>
+        <!-- <navigator url="/pages/homepage/homepage?uid={{item.id}}">
+          <image src="/static/images/icon/to_icon_show_small.png"></image>
+        </navigator> -->
+      </view>
+    </view>
+  </view>
+  <view class="none" wx:else>
+    <view>暂无数据</view>
+  </view>
+</view>
+<view class="Fans_container" wx:else>
+  <view class="container" wx:if="{{Fans_exists}}">
+    <view class="item" wx:for="{{FansList}}" wx:key='index'>
+      <view class="row">
+        <view class="userinfo">
+          <image class="avatar" src="{{item.avatar}}"></image>  
+          <view class="user">
+            <view class="nickname">{{item.nickname}}</view>
+            <view class="fans">粉丝 · {{item.fans_count}}</view>
+          </view>
+        </view>
+        <!-- <navigator url="/pages/homepage/homepage?uid={{item.uid}}">
+          <image src="/static/images/icon/to_icon_show_small.png"></image>
+        </navigator> -->
+      </view>
+      
+    </view>
+  </view>
+  <view class="none" wx:else>
+    <view>暂无数据</view>
+  </view>
+</view>
+

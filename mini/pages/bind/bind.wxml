@@ -1,0 +1,10 @@
+<!--pages/bind/bind.wxml-->
+<view>{{question}}</view>
+<view>{{answer}}</view>
+<button bindtap="changeData">让我告诉你真相</button>
+<view class="getUsrinfo">
+  <view>获取当前用户名：{{name}}</view>
+  <view>获取当前用户头像：<image src="{{path}}"></image></view>
+  <button open-type="getUserInfo" bindgetuserinfo="getUsrinfo">获取用户信息</button>
+</view>
+<view bindtap="getLocalPath">{{localpath}}</view>

@@ -1,0 +1,123 @@
+<!--pages/home/home.wxml-->
+<view class="top-view">
+  <view class="user">
+    <view class="row">
+      <image class="avatar" wx:if="{{userInfo}}" src="{{userInfo.avatarUrl}}"></image>
+      <image class="avatar" wx:else="{{userInfo}}" src="/static/images/default.png"></image>
+      <view class="name" wx:if="{{userInfo}}">
+        <view>{{userInfo.nickName}}</view>
+      </view>
+      <view class="name" wx:else="{{userInfo}}">
+        <navigator url="/pages/login/login">登录</navigator>|
+        <navigator url="/pages/login/login">注册</navigator>
+      </view>
+    </view>
+    <view wx:if="{{userInfo}}">
+      <navigator url="/pages/homepage/homepage">
+        <view class="site">查看个人主页</view>
+      </navigator> 
+    </view>
+     <view wx:else></view>
+  </view>
+  <view class="number" wx:if="{{userInfo}}">
+    <view>
+      <navigator class="row" url="/pages/followDetail/follow_detail?token={{userInfo.token}}&choose=true">
+        <text>{{Data.follow_count}}</text>
+        <text>关注</text>
+      </navigator>
+    </view>
+    <view >
+      <navigator class="row" url="/pages/followDetail/follow_detail?token={{userInfo.token}}&choose=false">
+        <text>{{Data.fans_count}}</text>
+        <text>粉丝</text>
+      </navigator>
+    </view>
+    <view>
+      <navigator class="row" url="/pages/collect_news/collect_news?token={{userInfo.token}}">
+        <text>{{Data.collect_count}}</text>
+        <text>我的收藏</text>
+      </navigator>
+    </view>
+    <view>
+      <navigator class="row" url="/pages/my_article/my_article?token={{userInfo.token}}" >
+        <text>{{Data.article_count}}</text>
+        <text>我的文章</text>
+      </navigator>
+    </view>
+  </view>  
+  <view class="number" wx:else>
+    <view>
+      <navigator class="row" url="/pages/login/login">
+        <text>0</text>
+        <text>关注</text>
+      </navigator>
+    </view>
+    <view >
+      <navigator class="row" url="/pages/login/login">
+        <text>0</text>
+        <text>粉丝</text>
+      </navigator>
+    </view>
+    <view>
+      <navigator class="row" url="/pages/login/login">
+        <text>0</text>
+        <text>我的收藏</text>
+      </navigator>
+    </view>
+    <view>
+      <navigator class="row" url="/pages/login/login" >
+        <text>0</text>
+        <text>我的文章</text>
+      </navigator>
+    </view>
+  </view>
+</view>
+
+<view class="middle-view">
+  <view class="item" bindtap="none">
+    <image src="/static/images/icon/transaction_order1_icon_show_20201223154342.png"></image>
+    <text>待付款</text>
+  </view>
+  <view class="item" bindtap="none">
+    <image src="/static/images/icon/transaction_order2_icon_show.png"></image>
+    <text>待发货</text>
+  </view>
+  <view class="item" bindtap="none">
+    <image src="/static/images/icon/transaction_order4_icon_show.png"></image>
+    <text>待支付</text>
+  </view>
+  <view class="item" bindtap="none">
+    <image src="/static/images/icon/transaction_order3_icon_show.png"></image>
+    <text>待评价</text>
+  </view>
+  <view class="item" bindtap="none">
+    <image src="/static/images/icon/transaction_order5_icon_show_20201223154339.png"></image>
+    <text>我的订单</text>
+  </view>
+</view>
+
+<view class="function-view">
+  <view class="row" bindtap="none">
+    <view class="left">我的钱包</view>
+    <view class="right">
+      <text>0</text>
+      <image src="/static/images/icon/to_icon_show_small.png"></image>
+    </view>
+  </view>
+  <view class="row" bindtap="none">
+    <view class="left">我的优惠券</view>
+    <view class="right">
+      <text>暂无可用</text>
+      <image src="/static/images/icon/to_icon_show_small.png"></image>
+    </view>
+  </view>
+  <view class="row" bindtap="none">
+    <view class="left">领券中心</view>
+    <view class="right">
+      <text>你要的优惠都在这里</text>
+      <image src="/static/images/icon/to_icon_show_small.png"></image>
+    </view>
+  </view>
+</view>
+<tabbar selected="{{3}}"></tabbar>
+

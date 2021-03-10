@@ -1,0 +1,54 @@
+<!--pages/index/index.wxml-->
+<!-- <view class="search_box">
+  <input class="ipt_style" placeholder="请输入搜索内容..." bindinput="serach_Ipt"></input>
+  <view class="btn" bindtap="search_Btn">搜索</view>
+</view> -->
+
+<view class="img">
+  <swiper autoplay="{{true}}" indicator-dots="{{true}}" class="swiper">
+      <swiper-item wx:for="{{img}}" wx:key="index">
+        <image src="{{item}}"></image>
+      </swiper-item>
+  </swiper>
+</view>
+
+<view class="classify">
+  <view class="icon" wx:for="{{chooseimage}}" wx:key="index">  
+      <navigator class="item" url="{{item.src}}">
+        <image src="{{item.add}}"></image>
+        <view>{{item.content}}</view>  
+      </navigator>    
+  </view>
+  
+</view>
+
+<view class="container">
+  <view class="item" wx:for="{{imageList}}" wx:key='index' >
+    <view class="fixed">
+      <view wx:if="{{userInfo}}">
+        <navigator url="/pages/newsDetail/newsDetail?newsId={{item.id}}">
+          <image src="{{item.cover}}" mode="widthFix"></image>
+        </navigator>
+      </view>
+      <view wx:else>
+        <navigator url="/pages/login/login">
+          <image src="{{item.cover}}" mode="widthFix"></image>
+        </navigator>
+      </view>
+      <view class="bottom_sty">
+        <view class="item_user">用户名：{{item.user.nickname}}</view>
+        <view class="item_img">
+          <image  src="/static/images/icon/眼睛 (1).png" ></image>
+          <view class="item_viewer">{{item.viewer_count}}</view>
+        </view>
+        
+      </view>   
+    </view>   
+    <view class="item_content">
+      <view wx:if="{{item.topic}}" class="item_topic">#{{item.topic.title}}#</view>
+      <view>{{item.content}}</view> 
+    </view>
+        
+  </view>
+</view>
+<tabbar selected="{{0}}"></tabbar>

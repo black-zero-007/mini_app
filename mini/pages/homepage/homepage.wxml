@@ -1,0 +1,27 @@
+<!--pages/homepage/homepage.wxml-->
+<view class="container">
+  <view class="top"></view>
+  <image src="{{userInfo.avatarUrl}}"></image>
+  <view class="userInfo">
+    <view class="Style">
+      <view class="text">昵称</view>
+      <view class="name">{{userInfo.nickName}}</view>
+    </view>
+    <view class="Style">
+      <view class="text">昵称</view>
+      <view class="gender" wx:if="{{userInfo.gender==1}}">男</view>
+      <view class="gender" wx:else>女</view>
+    </view>
+    <view class="Style">
+      <view class="text">当前城市</view>
+      <view class="city">{{userInfo.address}}</view>
+    </view>
+    <view class="Style">
+      <view class="text">手机</view>
+      <view class="phone">{{userInfo.phone}}</view>
+    </view>
+  </view>
+  <view class="exit">
+    <button bindtap="onClicklogout">退出</button>
+  </view>
+</view>

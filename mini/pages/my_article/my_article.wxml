@@ -1,0 +1,25 @@
+<!--pages/article_collect/article_collect.wxml-->
+<view class="container" wx:if="{{NewsList}}">
+  <view class="item" wx:for="{{NewsList}}">
+    <view class="topic">#{{item.topic.title}}#</view>
+    <view class="News">
+      <navigator url="/pages/newsDetail/newsDetail?newsId={{item.id}}">
+        <view class="intro">{{item.content}}</view>
+        <image src="{{item.cover}}" mode="center"></image>
+      </navigator>
+    </view>
+    <view class="bottom">
+      <view class="user">
+        <image src="{{item.user.avatar}}"></image>
+        <view class="nickname">{{item.user.nickname}}</view>
+      </view>
+     <view class="viewer">
+       <image src="/static/images/icon/眼睛灰.png"></image>
+       <view>{{item.viewer_count}}次浏览</view>
+     </view> 
+    </view>
+  </view>
+</view>
+<view class="none" wx:else>
+    <view>暂无数据</view>
+  </view>
